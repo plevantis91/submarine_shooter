@@ -241,8 +241,12 @@ def main():
             if collide(enemy, player):
                 player.health -= 10
                 enemies.remove(enemy)
-            elif enemy.y + enemy.get_height() > HEIGHT:
-                lives -= 1
+            elif enemy.x + enemy.get_width() < 0:
+                player.health -= 10
+                if player.health <= 0:
+                    lives -= 1
+                    player.health = player.max_health
+                    
                 enemies.remove(enemy)
       
         player.move_weapons(weapon_vel, enemies)
