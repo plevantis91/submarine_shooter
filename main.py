@@ -1,7 +1,7 @@
 import pygame 
 import os 
+import time
 import random
-
 pygame.font.init()
 
 WIDTH, HEIGHT = 750,750
@@ -161,6 +161,8 @@ def main():
     player_vel = 5
     
     player = Player(300, 650)
+    
+    clock = pygame.time.Clock()
     
     lost = False
     lost_count = 0
